@@ -1,5 +1,5 @@
 
-const API = "http://127.0.0.1:3000";
+const API = "";
 
 const login = document.getElementById("adminLogin");
 const dashboard = document.getElementById("adminDashboard");
