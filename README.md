@@ -25,4 +25,5 @@ Esta é uma prévia local de interface. O formulário não valida contas, não s
 ## Se não quiser instalar Live Server
 Com Python instalado, abra o terminal do VS Code na pasta do projeto e execute:
 `python -m http.server 5500`
+
 Depois acesse `http://localhost:5500`.
