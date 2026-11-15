@@ -4,8 +4,8 @@
   "description": "1. Extraia a pasta `lxr-portal-local` para um local no computador. 2. Abra o Visual Studio Code. 3. Vá em **Arquivo > Abrir Pasta** e escolha `lxr-portal-local`. 4. Instale a extensão **Live Server** (Ritwick Dey). 5. Clique com o botão direito em `index.html` e escolha **Open with Live Server**. 6. O site abrirá no navegador. Ao salvar `index.html`, `styles.css` ou `app.js` (`Ctrl+S`), o navegador atualizará automaticamente.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "start": "node server.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
