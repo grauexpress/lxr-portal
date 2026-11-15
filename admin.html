@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LXR PORTAL — Administração</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="topbar"></div>
+
+  <!-- LOGIN ADMINISTRATIVO -->
+  <main class="admin-page" id="adminLogin">
+
+    <section class="admin-panel" style="max-width:420px;margin:80px auto;text-align:center;">
+      <h1>LXR PORTAL</h1>
+      <h2>Acesso administrativo</h2>
+      <p>Entre com sua senha para continuar.</p>
+
+      <form id="adminLoginForm">
+        <input
+          type="password"
+          id="adminPassword"
+          placeholder="Senha administrativa"
+          autocomplete="current-password"
+          required
+        >
+
+        <button type="submit" class="primary-button">
+          ENTRAR NO PAINEL
+        </button>
+
+        <p id="adminLoginError" role="alert" style="color:#dc3545;"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- PAINEL ADMINISTRATIVO -->
+  <main class="admin-page hidden" id="adminDashboard">
+
+    <header class="admin-header">
+      <div>
+        <h1>LXR PORTAL</h1>
+        <p>Painel administrativo</p>
+      </div>
+
+      <div>
+        <span class="admin-status">ADMINISTRADOR</span>
+        <button id="adminLogout" type="button">SAIR</button>
+      </div>
+    </header>
+
+    <section class="admin-welcome">
+      <h2>Visão geral</h2>
+      <p>Acompanhe os registros e as atividades do portal.</p>
+    </section>
+
+    <section class="admin-stats">
+      <div class="admin-stat-card">
+        <span>Total de cadastros</span>
+        <strong id="totalCadastros">0</strong>
+      </div>
+
+      <div class="admin-stat-card">
+        <span>Total de consultas</span>
+        <strong>0</strong>
+      </div>
+
+      <div class="admin-stat-card">
+        <span>Contatos registrados</span>
+        <strong id="totalContatos">0</strong>
+      </div>
+    </section>
+
+    <section class="admin-panel">
+      <div class="admin-panel-header">
+        <div>
+          <h2>Registros de usuários</h2>
+          <p>Contatos fornecidos voluntariamente pelos usuários.</p>
+        </div>
+      </div>
+
+      <div class="admin-search">
+        <input
+          type="search"
+          id="adminSearch"
+          placeholder="Pesquisar por sobrenome, email ou telefone..."
+        >
+      </div>
+
+      <div class="admin-table-wrapper">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Sobrenome</th>
+              <th>Email</th>
+              <th>Telefone</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+
+          <tbody id="adminRecords">
+            <tr>
+              <td colspan="4" class="admin-empty">
+                Carregando registros...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="admin-panel">
+      <h2>Histórico de consultas</h2>
+      <p class="admin-description">
+        Histórico de atividades efetivamente realizadas no portal.
+      </p>
+
+      <div class="admin-empty">
+        Nenhuma consulta registrada.
+      </div>
+    </section>
+
+    <footer class="admin-footer">
+      LXR PORTAL © 2026 — Painel administrativo
+    </footer>
+
+  </main>
+
+  <script src="admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,587 @@
+/* LXR PORTAL — estilos principais
+   Edite os valores abaixo para mudar cores, fontes e espaçamentos. */
+:root {
+  --blue: #4285e8;
+  --blue-dark: #245da7;
+  --ink: #202124;
+  --muted: #5f6368;
+  --line: #dadce0;
+  --page-bg: #f6f8fb;
+  --card-bg: #ffffff;
+  --card-radius: 16px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topbar { height: 7px; background: linear-gradient(90deg,#174d91,var(--blue),#83b1ee); }
+.page { min-height: calc(100vh - 7px); display: grid; place-items: center; padding: 28px 16px; }
+.login-card {
+  width: min(100%, 460px); padding: 38px;
+  background: var(--card-bg); border: 1px solid #e6eaf0;
+  border-radius: var(--card-radius); box-shadow: 0 12px 36px rgba(30,60,100,.07);
+}
+.brand-area { display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 28px; }
+.brand-mark {
+  width: 52px; height: 52px; display: grid; place-items: center;
+  color: #fff; background: linear-gradient(145deg,#1e579d,var(--blue));
+  border-radius: 14px; font-size: 17px; font-weight: 800; letter-spacing: -1px;
+}
+.brand-name { color: #244e80; font-size: 18px; font-weight: 800; letter-spacing: 2.4px; }
+.brand-name small { display: block; margin-top: 4px; color: #7a8798; font-size: 9px; letter-spacing: 3.4px; }
+.logo { max-width: 210px; max-height: 82px; object-fit: contain; }
+h1 { margin: 0 0 12px; text-align: center; font-size: 30px; font-weight: 500; }
+.intro { max-width: 350px; margin: 0 auto 27px; color: #4c5158; text-align: center; line-height: 1.6; }
+label { display: block; margin: 16px 0 8px; color: #4e5661; font-size: 13px; font-weight: 600; }
+input {
+  width: 100%; height: 53px; padding: 0 14px; border: 1px solid var(--line);
+  border-radius: 9px; outline: none; font-size: 15px;
+}
+input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(66,133,232,.12); }
+.form-links { display: flex; justify-content: space-between; gap: 12px; margin: 17px 0 27px; }
+a { color: var(--blue-dark); text-decoration: none; font-size: 13px; font-weight: 600; }
+.primary-button {
+  width: 100%; min-height: 50px; border: 0; border-radius: 8px;
+  background: var(--blue); color: #fff; font-size: 14px; font-weight: 700; cursor: pointer;
+}
+.primary-button:hover { background: #3476d3; }
+.fine-print { margin: 23px 0 0; color: #7a838e; font-size: 11px; line-height: 1.5; text-align: center; }
+.back-link { display: block; margin-top: 22px; text-align: center; }
+.hidden { display: none !important; }
+.loading { padding: 35px 0; text-align: center; }
+.loading h2 { font-size: 21px; font-weight: 500; }
+.loading p { color: var(--muted); font-size: 14px; }
+.spinner { width: 34px; height: 34px; margin: 0 auto 18px; border: 4px solid #dce8f8; border-top-color: var(--blue); border-radius: 50%; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-width: 520px) {
+  .login-card { padding: 29px 22px; border-radius: 13px; }
+  h1 { font-size: 26px; }
+  .form-links { flex-wrap: wrap; }
+}
+/* Botão de recuperação oficial */
+.official-button {
+  display: flex;
+  width: 100%;
+  min-height: 50px;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  line-height: 1.3;
+}
+#forgotForm .primary-button {
+  margin-top: 24px;
+}
+
+/* PATROCINADORES */
+.sponsors-section {
+  width: 100%;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.sponsors-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 16px;
+}
+
+.sponsors-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.sponsors-logos img {
+  width: 75px;
+  height: 45px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.sponsors-logos img:hover {
+  opacity: 1;
+}
+
+/* =================================
+   LXR PORTAL - PAINEL ADMINISTRATIVO
+================================= */
+
+.admin-page {
+  width: min(1100px, 94%);
+  margin: 40px auto;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.admin-header h1 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.admin-header p,
+.admin-welcome p,
+.admin-panel-header p {
+  color: #888;
+  font-size: 14px;
+  margin-top: 7px;
+}
+
+.admin-status {
+  background: #eaf1ff;
+  color: #3476d5;
+  padding: 9px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.admin-welcome {
+  margin-bottom: 22px;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.admin-stat-card,
+.admin-panel {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 13px;
+  padding: 22px;
+}
+
+.admin-stat-card span {
+  display: block;
+  color: #777;
+  font-size: 13px;
+}
+
+.admin-stat-card strong {
+  display: block;
+  margin-top: 13px;
+  font-size: 30px;
+  color: #252525;
+}
+
+.admin-panel {
+  margin-bottom: 22px;
+}
+
+.admin-panel h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.admin-search {
+  margin: 22px 0;
+}
+
+.admin-search input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 13px;
+}
+
+.admin-table th {
+  color: #777;
+  font-weight: 600;
+}
+
+.admin-empty {
+  padding: 30px 15px;
+  text-align: center;
+  color: #999;
+  font-size: 13px;
+}
+
+.admin-description {
+  color: #888;
+  font-size: 13px;
+}
+
+.admin-footer {
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  padding: 25px 0;
+}
+
+@media (max-width: 650px) {
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-page {
+    margin-top: 25px;
+  }
+}
+
+/* Espaçamento do botão consultar benefício */
+#benefitForm .primary-button {
+  margin-top: 18px;
+}
+
+.number-error {
+  color: #dc3545;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.number-error.hidden {
+  display: none;
+}
+
+.benefit-loading-page {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.benefit-loading-content {
+  max-width: 420px;
+}
+
+.benefit-spinner {
+  width: 55px;
+  height: 55px;
+  border: 5px solid #e2eee6;
+  border-top-color: #18834b;
+  border-radius: 50%;
+  animation: benefitSpin 0.9s linear infinite;
+  margin: 0 auto 25px;
+}
+
+.benefit-loading-content h2 {
+  color: #176b3b;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.benefit-loading-content p {
+  color: #59675e;
+  font-size: 14px;
+}
+
+.benefit-loading-content span {
+  color: #929b95;
+  font-size: 12px;
+}
+
+@keyframes benefitSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* AVISO DE ENTREGA — DESTAQUE AMARELO */
+.delivery-notice {
+  width: 90%;
+  max-width: 420px;
+  margin: 8px auto 0;
+  padding: 14px;
+  background: #fff9df;
+  border: 2px solid #f0c541;
+  border-radius: 13px;
+  text-align: center;
+  box-shadow:
+  0 0 8px rgba(240, 197, 65, 0.55),
+  0 0 18px rgba(240, 197, 65, 0.35);
+animation: brilhoFrete 2s ease-in-out infinite;
+  box-sizing: border-box;
+}
+
+.delivery-notice-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 15px;
+}
+
+.delivery-icon {
+  font-size: 34px;
+  background: #ffedaa;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.delivery-tag {
+  color: #a66b00;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.delivery-notice-header h2 {
+  color: #624500;
+  font-size: 18px;
+  margin: 5px 0 0;
+}
+
+.delivery-free {
+  background: #ffedaa;
+  border: 1px solid #f0d16a;
+  border-radius: 9px;
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.delivery-free strong {
+  color: #805600;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.delivery-free span {
+  color: #725b25;
+  font-size: 12px;
+}
+
+.delivery-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0dfa5;
+}
+
+.delivery-price span {
+  color: #725b25;
+  font-size: 12px;
+}
+
+.delivery-price strong {
+  color: #8a5b00;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.delivery-notice > p {
+  font-size: 11px;
+  color: #725b25;
+  line-height: 1.6;
+  margin: 13px 0;
+}
+
+.pix-placeholder {
+  margin-top: 12px;
+  padding: 13px;
+  background: #fffdf5;
+  border: 1px dashed #d6ae36;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.pix-placeholder span {
+  color: #8a6200;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.pix-placeholder strong {
+  color: #624500;
+  font-size: 11px;
+}
+
+.pix-placeholder small {
+  color: #806f43;
+  font-size: 10px;
+  line-height: 1.5;
+}
+@keyframes brilhoFrete {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(240, 197, 65, 0.35),
+                0 0 12px rgba(240, 197, 65, 0.20);
+  }
+
+  50% {
+    box-shadow: 0 0 13px rgba(240, 197, 65, 0.75),
+                0 0 26px rgba(240, 197, 65, 0.45);
+  }
+}
+.surname-warning {
+  color: #dc3545;
+  font-size: 11px;
+  margin: 7px 0 0;
+  font-weight: 600;
+  text-align: left;
+}
+.back-button {
+  display: block;
+  width: auto;
+  margin: 14px auto 0;
+  padding: 8px 14px;
+  background: transparent;
+  border: none;
+  color: #777;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: none;
+  transition: color 0.2s ease;
+}
+
+.back-button:hover {
+  background: transparent;
+  color: #222;
+  box-shadow: none;
+}
+.loading-view {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.97);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  text-align: center;
+}
+
+.loading-content {
+  max-width: 320px;
+}
+
+.loading-content h2 {
+  font-size: 20px;
+  margin: 22px 0 10px;
+}
+
+.loading-content p {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.5;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e5e5e5;
+  border-top-color: #4285e8;
+  border-radius: 50%;
+  animation: lxrSpin 0.8s linear infinite;
+  margin: auto;
+}
+
+@keyframes lxrSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Espaçamento dos botões do formulário */
+#continueButton,
+#submitButton {
+  margin-top: 24px;
+}
+
+/* Botão voltar minimalista */
+#backButton {
+  display: block;
+  margin: 16px auto 0;
+}
+.step-logo {
+  display: block;
+  width: 120px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 20px;
+  object-fit: contain;
+}
+/* ALINHAMENTO DA CAIXINHA DE AUTORIZAÇÃO */
+.consent-label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0 24px;
+  text-align: left;
+  line-height: 1.5;
+  font-size: 13px;
+}
+
+.consent-label input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  flex-shrink: 0;
+}
+.surname-warning {
+  color: #e53935;
+  font-size: 12px;
+  text-align: left;
+  margin: 8px 0 0;
+  line-height: 1.4;
+}
+.step-two-header p {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.5;
+}
