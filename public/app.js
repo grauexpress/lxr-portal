@@ -47,7 +47,7 @@ form.addEventListener("submit", async (event) => {
   if (!phone.reportValidity()) return;
 
   if (phoneNumber.length < 10 || phoneNumber.length > 13) {
-    message.textContent = "Confira o telefone informado.";
+    message.textContent = "Confira o CPF informado.";
     return;
   }
 
