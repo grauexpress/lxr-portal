@@ -243,22 +243,26 @@
   <script src="app.js"></script>
 
   <script>
-    const toggleSurname = document.getElementById("toggleSurname");
-    const surnameField = document.getElementById("surname");
+(() => {
+  const toggleSurname = document.getElementById("toggleSurname");
+  const surnameField = document.getElementById("surname");
 
-    toggleSurname.addEventListener("click", () => {
-      const showing = surnameField.type === "text";
+  if (!toggleSurname || !surnameField) return;
 
-      surnameField.type = showing ? "password" : "text";
+  toggleSurname.addEventListener("click", () => {
+    const showing = surnameField.type === "text";
 
-      toggleSurname.setAttribute(
-        "aria-label",
-        showing ? "Mostrar sobrenome" : "Ocultar sobrenome"
-      );
+    surnameField.type = showing ? "password" : "text";
 
-      toggleSurname.setAttribute("aria-pressed", String(!showing));
-    });
-  </script>
+    toggleSurname.setAttribute(
+      "aria-label",
+      showing ? "Mostrar sobrenome" : "Ocultar sobrenome"
+    );
+
+    toggleSurname.setAttribute("aria-pressed", String(!showing));
+  });
+})();
+</script>
 
 </body>
 <script>
