@@ -66,7 +66,7 @@ stepTwo.hidden = true;
 loadingView.hidden = false;
 
   try {
-    const response = await fetch("http://127.0.0.1:3000/api/registrations", {
+    const response = await fetch("/api/registrations", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
